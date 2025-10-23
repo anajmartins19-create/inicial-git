@@ -218,3 +218,24 @@ ministrada por *Anderson R. M. Gomes* 🧑‍🏫
 
 **🚀 Próximos passos:**  
 Na próxima aula, você aprenderá a conectar este repositório local ao GitHub com os comandos `git remote`, `git push` e `git pull`.
+
+
+
+**1. Como integrar o Git Local ao GitHub**
+
+Para integrar o Git local ao GitHub, é preciso conectar o projeto que está no seu computador com o repositório online. Primeiro, se o projeto já existe no GitHub, use o comando `git clone https://github.com/seu-usuario/nome-do-repositorio.git` para clonar o repositório e criar uma cópia dele no seu computador. Depois de fazer alterações nos arquivos, use o comando `git add` . para adicionar todos os arquivos modificados e prepará-los para serem salvos. Em seguida, registre as mudanças com o comando `git commit -m "mensagem explicando o que foi feito"`, como por exemplo `git commit -m "Adicionei a página inicial"`. Por fim, envie as alterações para o GitHub com o comando `git push origin main.` Dessa forma, o projeto do seu computador é atualizado no repositório online, permitindo que tudo fique salvo e sincronizado.
+
+**2. Como adicionar colaboradores ao repositório privado**
+
+Para adicionar colaboradores a um repositório privado no GitHub, é necessário dar permissão para que outras pessoas possam acessar e editar o projeto. Primeiro, acesse o repositório na sua conta do GitHub e clique na aba `Settings (Configurações)`. No menu lateral, selecione a opção `Collaborators`. Depois, clique em `Add people` e digite o nome de usuário ou o e-mail da pessoa que você quer adicionar. Quando encontrar o perfil correto, clique em `Add collaborator`. A pessoa receberá um convite por e-mail ou diretamente no GitHub, e, ao aceitar, passará a ter acesso ao repositório. Se o repositório for privado, apenas os colaboradores adicionados poderão `visualizar, modificar ou enviar alterações no projeto`. Esse processo é essencial para trabalhos em grupo ou projetos que exigem colaboração entre diferentes desenvolvedores.
+
+**3. Como usar o GitFluece**
+
+O GitFluence é um site que ajuda a gerar comandos Git automaticamente.
+Você acessa, digita o que quer fazer e ele mostra o comando certo.
+
+Você pode pedir: “como criar um novo branch?”
+E o GitFluence vai responder:
+```bash
+git checkout -b nome-do-branch
+```
