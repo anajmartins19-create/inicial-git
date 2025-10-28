@@ -12,19 +12,44 @@ Esses comandos configuram o nome e o e-mail do usuário (necessário para regist
 ```bash
 git config --global user.name "Seu Nome"
 git config --global user.email "seuemail@exemplo.com"
+```
+Eles server para você ter uma identidade no git. isso é muito importante porque cada commit usa esta informação, e ela é carimbada de forma imutável nos commits que você começa criar.
+com a opção do comando *--global* , você só faz isso uma vez, porque então o Git usará esta informção para qualquer coisa que você fizer naquele sistema.Se você quiser subustituir essa informação com nome diferente para um projeto específico, basta rodar o comando sem a opção de *--global* dentro do projeto.
+
+```
 git config --global core.editor "code --wait"   # Define o VS Code como editor padrão (opcional)
+```
+Agora que a sua identidade está configurada, você pode escolher o editor de texto padrão que será chamado quando Git precisar que você entre uma mensagem, que pode ser escolhida como editor padrão, configurado , etc...
+```
 git config --list                                # Verifica as configurações atuais
 ```
+Se você quiser testar as suas configurações, você pode usar o comando git config --list para listar todas as configurações que o Git conseguir encontrar naquele momento:
+<img width="672" height="154" alt="Captura de tela 2025-10-28 104207" src="https://github.com/user-attachments/assets/74b4adfd-297b-440c-ad97-d1f512019c23" />
 
----
+
 
 ## 📂 2. Criar e iniciar um repositório
 
 ```bash
 mkdir meu_projeto
-cd meu_projeto
-git init
 ```
+isso criará a pasta na sua máquina, no entanto, não funciona caso :
+
+- A permissão for negada 
+
+- o arquivo nomeado for existente
+
+```
+cd meu_projeto
+```
+
+
+
+
+
+
+git init
+
 
 > O comando `git init` cria um repositório local, gerando a pasta oculta `.git`.
 
