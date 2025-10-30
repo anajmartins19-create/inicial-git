@@ -42,16 +42,16 @@ isso criará a pasta na sua máquina, no entanto, não funciona caso :
 ```
 cd meu_projeto
 ```
+usasse quando quer ir para  um diretório específico seguido pelo nome desejado . 
 
+ex:cd Documentos/Projetos (entra na pasta "Projetos" que está dentro de "Documentos").
 
-
-
-
-
+```
 git init
+```
 
-
-> O comando `git init` cria um repositório local, gerando a pasta oculta `.git`.
+Ele inicializa um novo repositório Git vazio onde as alterações do projeto podem ser controladas.
+O comando git init é usado para iniciar o controle de versão de um projeto, criando um novo repositório Git na pasta atual. Ele também pode ser usado para reativar um projeto já existente, tornando-o um repositório Git. Porém, se o projeto já estiver hospedado em um servidor remoto e você quiser apenas copiar para sua máquina.
 
 ---
 
@@ -63,13 +63,21 @@ Para padronizar e seguir boas práticas, altere para **main**:
 ```bash
 git branch -m master main
 ```
+Esse comando renomeia a branch principal do repositório de master para main.
+Hoje em dia, o GitHub usa main como nome padrão, então esse comando serve para deixar seu repositório atualizado com o padrão moderno.
+
 
 Se quiser definir **main** como padrão para novos repositórios:
 
-```bash
+Para definir main como a branch padrão em novos repositórios, é possível configurar isso tanto no Git local quanto nas plataformas de hospedagem.
+
+No Git, basta executar:
+
+```
 git config --global init.defaultBranch main
 ```
-
+Esse comando faz com que todo novo repositório criado com git init use main como branch inicial.
+É uma configuração global, ou seja, vale para todos os projetos
 ---
 
 ## 📄 4. Criar arquivos e verificar status
@@ -78,8 +86,17 @@ git config --global init.defaultBranch main
 echo "Meu primeiro arquivo" > readme.txt
 git status
 ```
+O comando echo cria um arquivo de texto chamado readme.txt com o conteúdo escrito.
+git status mostra o que mudou no repositório: arquivos novos, modificados, ou prontos para commit.
+Após criar o arquivo, git status vai exibir algo como:
 
-> `git status` mostra arquivos novos, modificados ou prontos para commit.
+```
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	readme.txt
+```
+
+
 
 ---
 
@@ -91,6 +108,20 @@ git add .                # adiciona todos os arquivos do diretório
 git status
 ```
 
+O comando git add é responsável por preparar os arquivos que serão incluídos no próximo commit.
+Quando fazemos mudanças em um projeto, o Git não salva tudo automaticamente — ele precisa saber quais arquivos queremos registrar no histórico.
+É aí que entra a chamada área de staging (ou “área de preparação”).
+
+git add readme.txt: adiciona apenas um arquivo específico.
+
+git add .: adiciona todos os arquivos novos e modificados no diretório atual.
+
+git status: mostra o que está pronto para commit e o que ainda não foi adicionado.
+
+
+
+
+
 > A área de staging é onde os arquivos ficam “preparados” antes do commit.
 
 ---
@@ -100,8 +131,8 @@ git status
 ```bash
 git commit -m "Primeiro commit - adiciona readme.txt"
 ```
-
-> Um commit é o “salvamento” oficial no histórico do repositório.
+Um commit é o momento em que o Git salva oficialmente as alterações que estavam na área de staging.
+Cada commit recebe uma mensagem (-m) que descreve o que foi alterado, facilitando o rastreamento no futuro.
 
 ---
 
@@ -109,9 +140,19 @@ git commit -m "Primeiro commit - adiciona readme.txt"
 
 ```bash
 git log
+```
+exibe a lista completa de commits com autor, data e mensagem.
+```
 git log --oneline
+```
+mostra o histórico resumido, ideal para consultas rápidas.
+
+```
 git show
 ```
+detalha as mudanças feitas em um commit específico.
+
+
 
 > Use `--oneline` para visualizar um resumo simplificado.
 
